@@ -9,7 +9,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>add nativewind ofr tailwind</Text>
+      <Text>add nativewind for tailwind</Text>
     </View>
   );
 }
