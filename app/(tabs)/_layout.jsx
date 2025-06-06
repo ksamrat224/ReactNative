@@ -30,8 +30,16 @@ const TabLayout = () => {
           ),
         }}
       />
-      <Tabs.Screen name="history" options={{ title: "History" }} />
-      <Tabs.Screen name="profile" options={{ title: "Profile" }} />
+      <Tabs.Screen name="history" options={{ title: "History" ,
+        tabBarIcon: ({color}) => (
+          <Ionicons name="time" size={24} color={color} />
+        )
+      }} />
+      <Tabs.Screen name="profile" options={{ title: "Profile",
+        tabBarIcon: ({color}) => (
+          <Ionicons name="person" size={24} color={color} />
+        )
+       }} />
     </Tabs>
   );
 };
