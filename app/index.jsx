@@ -15,7 +15,7 @@ export default function Index() {
       <Text className="font-extrabold text-white">add nativewind  tailwid</Text>
       <TouchableOpacity>
         <Text
-         className="text-white text-lg"
+         className="text-blue-700 font-bold text-lg"
          onPress={()=>router.push("/testing")}
         >
           Go to Testing</Text>
