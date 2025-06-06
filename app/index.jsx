@@ -1,16 +1,19 @@
-import { Text, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 
 export default function Index() {
   return (
     <View
-      className="bg-red-800"
+      className="bg-red-800" 
       style={{
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
       }}
     >
-      <Text className="text-yellow-500">add nativewind  tailwid</Text>
+      <Text className="font-extrabold text-white">add nativewind  tailwid</Text>
+      <TouchableOpacity>
+        <Text className="text-white text-lg">Go to Testing</Text>
+      </TouchableOpacity>
     </View>
   );
 }
