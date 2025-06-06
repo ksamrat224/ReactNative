@@ -4,7 +4,13 @@ import React from 'react'
 const Testing = () => {
   return (
     <View>
-      <Text>testing</Text>
+      <Text
+      className="text-2xl font-bold text-blue-500"
+      style={{
+        textAlign: 'center',
+        marginTop: 20,
+      }}
+      >testing good</Text>
     </View>
   )
 }
