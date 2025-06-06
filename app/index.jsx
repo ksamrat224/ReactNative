@@ -16,7 +16,7 @@ export default function Index() {
       <TouchableOpacity>
         <Text
          className="text-blue-700 font-bold text-lg"
-         onPress={()=>router.push("/testing")}
+         onPress={()=>router.push("/home")}
         >
           Go to Testing</Text>
       </TouchableOpacity>
