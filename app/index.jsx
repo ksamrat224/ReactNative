@@ -10,7 +10,7 @@ export default function Index() {
     <SafeAreaView className={`bg-[#1f2937]`}>
       <StatusBar barStyle="light-content" backgroundColor={"#1f2937"} />
       <ScrollView contentContainerStyle={{ height: "100%" }}>
-        <View className="flex-1 items-center justify-center">
+        <View className="m-2 flex items-center justify-center">
           <Image source={logo} style={{ width: "300", height: "300" }} />
         </View>
       </ScrollView>
