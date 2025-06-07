@@ -8,10 +8,10 @@ export default function Index() {
   const router = useRouter();
   return (
     <SafeAreaView className={`bg-[#1f2937]`}>
-      <StatusBar barStyle="light-content" backgroundColor={"#3e3df3"} />
-      <ScrollView contentContainerStyle={{height: "100%"}}>
-        <View>
-          <Image source={logo} style={{width:"300",height:"300"}}/>
+      <StatusBar barStyle="light-content" backgroundColor={"#1f2937"} />
+      <ScrollView contentContainerStyle={{ height: "100%" }}>
+        <View className="flex-1 items-center justify-center">
+          <Image source={logo} style={{ width: "300", height: "300" }} />
         </View>
       </ScrollView>
     </SafeAreaView>
