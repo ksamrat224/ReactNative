@@ -28,7 +28,10 @@ export default function Index() {
               <Text className="text-center text-lg font-bold">Sign Up</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity className="bg-[#f49b33] text-black p-4 my-2 rounded-lg shadow-lg">
+            <TouchableOpacity
+              onPress={() => router.push("/home")}
+              className="bg-[#f49b33] text-black p-4 my-2 rounded-lg shadow-lg"
+            >
               <Text className="text-center text-lg font-bold">
                 Sign In as a guest
               </Text>
