@@ -1,25 +1,17 @@
 import { useRouter } from "expo-router";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Image, ScrollView, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import logo from "../assets/images/dinetimelogo.png";
 
 export default function Index() {
   const router = useRouter();
   return (
-    <View
-      className="bg-red-800" 
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text className="font-extrabold text-white">add nativewind  tailwid</Text>
-      <TouchableOpacity>
-        <Text
-         className="text-blue-700 font-bold text-lg"
-         onPress={()=>router.push("/home")}
-        >
-          Go to Testing</Text>
-      </TouchableOpacity>
-    </View>
+    <SafeAreaView>
+      <ScrollView contentContainerStyle={{height: "100%"}}>
+        <View>
+          <Image source={logo} style={{width:"300",height:"300"}}/>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
