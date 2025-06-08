@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import logo from "../assets/images/dinetimelogo.png";
-const framee = require("../assets/images/Frame.png")
+const frame = require("../assets/images/Frame.png")
 
 // const logo = require("../assets/images/dinetimelogo.png"); //different import method for local images
 
@@ -57,7 +57,7 @@ export default function Index() {
           </View>
         </View>
         <View className="flex-1">
-          <Image source={framee} className="w-full h-full " resizeMode="contain"/>
+          <Image source={frame} className="w-full h-full " resizeMode="contain"/>
         </View>
       </ScrollView>
     </SafeAreaView>
