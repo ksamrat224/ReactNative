@@ -1,20 +1,27 @@
-import { View, Text, TouchableOpacity } from 'react-native'
-import React from 'react'
-import { Image, SafeAreaView, ScrollView, StatusBar } from 'react-native'
-import { useRouter } from 'expo-router'
-import logo from"../../assets/images/dinetimelogo.png"
-import frame from "../../assets/images/Frame.png"
-
+import { useRouter } from "expo-router";
+import {
+  Image,
+  ScrollView,
+  StatusBar,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import logo from "../../assets/images/dinetimelogo.png";
+import frame from "../../assets/images/Frame.png";
 
 const Signup = () => {
-    const router = useRouter();
+  const router = useRouter();
   return (
     <SafeAreaView className={`bg-[#1f2937]`}>
       <StatusBar barStyle="light-content" backgroundColor={"#1f2937"} />
       <ScrollView contentContainerStyle={{ height: "100%" }}>
         <View className="m-2 flex items-center justify-center">
           <Image source={logo} style={{ width: "300", height: "300" }} />
-            <Text className="text-white text-2xl font-bold mb-4">Welcome to DineTime</Text>
+          <Text className="text-white text-lg text-center font-bold mb-10">
+            Welcome to DineTime
+          </Text>
           <View className="w-3/4">
             <TouchableOpacity
               onPress={() => router.push("/signup")}
@@ -51,11 +58,15 @@ const Signup = () => {
           </View>
         </View>
         <View className="flex-1">
-          <Image source={frame} className="w-full h-full " resizeMode="contain"/>
+          <Image
+            source={frame}
+            className="w-full h-full "
+            resizeMode="contain"
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
-  )
-}
+  );
+};
 
-export default Signup
+export default Signup;
