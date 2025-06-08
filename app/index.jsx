@@ -30,12 +30,17 @@ export default function Index() {
 
             <TouchableOpacity
               onPress={() => router.push("/home")}
-              className="bg-[#f49b33] text-black p-4 my-2 rounded-lg shadow-lg"
+              className="bg-[#1f2937] border border-[#f49b33]  p-4 my-2 rounded-lg shadow-lg max-w-fit"
             >
-              <Text className="text-center text-lg font-bold">
+              <Text className="text-center text-lg font-semibold text-[#f49b33]">
                 Sign In as a guest
               </Text>
             </TouchableOpacity>
+          </View>
+          <View>
+            <Text>
+              
+            </Text>
           </View>
         </View>
       </ScrollView>
