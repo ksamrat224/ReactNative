@@ -1,7 +1,10 @@
 import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
-import { Image, SafeAreaView, ScrollView, StatusBar } from 'react-native-web'
+import { Image, SafeAreaView, ScrollView, StatusBar } from 'react-native'
 import { useRouter } from 'expo-router'
+import logo from"../../assets/images/dinetimelogo.png"
+import frame from "../../assets/images/Frame.png"
+
 
 const Signup = () => {
     const router = useRouter();
@@ -11,6 +14,7 @@ const Signup = () => {
       <ScrollView contentContainerStyle={{ height: "100%" }}>
         <View className="m-2 flex items-center justify-center">
           <Image source={logo} style={{ width: "300", height: "300" }} />
+            <Text className="text-white text-2xl font-bold mb-4">Welcome to DineTime</Text>
           <View className="w-3/4">
             <TouchableOpacity
               onPress={() => router.push("/signup")}
