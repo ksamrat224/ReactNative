@@ -10,6 +10,7 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import logo from "../../assets/images/dinetimelogo.png";
 import frame from "../../assets/images/Frame.png";
+import { Formik } from "formik";
 
 const Signup = () => {
   const router = useRouter();
@@ -23,6 +24,13 @@ const Signup = () => {
             Welcome to DineTime
           </Text>
         </View>
+
+        <View className="w-5/6 ">
+          <Formik initialValues={{email:"",password:""}} validationSchema={""} onSubmit={handleSignup}>
+
+          </Formik>
+        </View>
+
         <View className="flex-1">
           <Image
             source={frame}
