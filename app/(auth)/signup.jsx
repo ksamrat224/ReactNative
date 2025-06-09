@@ -33,8 +33,8 @@ const Signup = () => {
           <Formik initialValues={{email:"",password:""}} validationSchema={""} onSubmit={handleSignup}>
             {({handleChange, handleBlur,handleSubmit, values, errors, touched})=>(
               <View className="w-full">
-              <Text></Text>
-              <TextInput/>
+              <Text>Email:</Text>
+              <TextInput keyboardType="email-address" onChangeText={handleChange("email")} value={values.email} onBlur={handleBlur("email")}/>
               </View>
             )} 
 
