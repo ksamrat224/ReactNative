@@ -37,6 +37,8 @@ const Signup = () => {
               <TextInput
               className="h-15 border border-white text-white rounded px-2 "
               keyboardType="email-address" onChangeText={handleChange("email")} value={values.email} onBlur={handleBlur("email")}/>
+              {touched.email && errors.email && 
+              <Text>{errors.email} </Text>}
               </View>
             )} 
 
