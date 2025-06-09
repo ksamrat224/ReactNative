@@ -14,6 +14,9 @@ import { Formik } from "formik";
 
 const Signup = () => {
   const router = useRouter();
+  const handleSignup = ()=>{
+    
+  }
   return (
     <SafeAreaView className={`bg-[#1f2937]`}>
       <StatusBar barStyle="light-content" backgroundColor={"#1f2937"} />
@@ -21,13 +24,17 @@ const Signup = () => {
         <View className="m-2 flex items-center justify-center">
           <Image source={logo} style={{ width: "300", height: "300" }} />
           <Text className="text-white text-lg text-center font-bold mb-10">
-            Welcome to DineTime
+            Let's get you started.
           </Text>
         </View>
 
         <View className="w-5/6 ">
           <Formik initialValues={{email:"",password:""}} validationSchema={""} onSubmit={handleSignup}>
+            {({handleChange, handleBlur,handleSubmit, values, errors, touched})=>(
+              
+            )} 
 
+            
           </Formik>
         </View>
 
