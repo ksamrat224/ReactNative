@@ -4,6 +4,7 @@ import {
   ScrollView,
   StatusBar,
   Text,
+  TextInput,
   TouchableOpacity,
   View,
 } from "react-native";
@@ -31,7 +32,10 @@ const Signup = () => {
         <View className="w-5/6 ">
           <Formik initialValues={{email:"",password:""}} validationSchema={""} onSubmit={handleSignup}>
             {({handleChange, handleBlur,handleSubmit, values, errors, touched})=>(
-              
+              <View className="w-full">
+              <Text></Text>
+              <TextInput/>
+              </View>
             )} 
 
             
