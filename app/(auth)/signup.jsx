@@ -12,6 +12,7 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import logo from "../../assets/images/dinetimelogo.png";
 import frame from "../../assets/images/Frame.png";
+import validationSchema from "../../utils/signupSchema";
 
 const Signup = () => {
   const router = useRouter();
@@ -29,7 +30,7 @@ const Signup = () => {
           <View className="w-5/6 ">
             <Formik
               initialValues={{ email: "", password: "" }}
-              validationSchema={""}
+              validationSchema={validationSchema}
               onSubmit={handleSignup}
             >
               {({
@@ -41,7 +42,9 @@ const Signup = () => {
                 touched,
               }) => (
                 <View className="w-full">
-                  <Text className="text-[#f49b33] font-bold  mt-2 mb-2">Email:</Text>
+                  <Text className="text-[#f49b33] font-bold  mt-2 mb-2">
+                    Email:
+                  </Text>
                   <TextInput
                     className="h-15 border border-white text-white rounded px-2 "
                     keyboardType="email-address"
@@ -55,7 +58,9 @@ const Signup = () => {
                     </Text>
                   )}
 
-                  <Text className="text-[#f49b33] mt-4 mb-2 font-bold">Password:</Text>
+                  <Text className="text-[#f49b33] mt-4 mb-2 font-bold">
+                    Password:
+                  </Text>
                   <TextInput
                     className="h-15 border border-white text-white rounded px-2 "
                     secureTextEntry
