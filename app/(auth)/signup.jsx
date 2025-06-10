@@ -22,7 +22,7 @@ const Signup = () => {
       <ScrollView contentContainerStyle={{ height: "100%" }}>
         <View className="m-2 flex items-center justify-center">
           <Image source={logo} style={{ width: "300", height: "300" }} />
-          <Text className="text-white text-lg text-center font-bold mb-10">
+          <Text className="text-white text-lg text-center font-bold mb-8">
             Let's get you started.
           </Text>
 
@@ -41,7 +41,7 @@ const Signup = () => {
                 touched,
               }) => (
                 <View className="w-full">
-                  <Text>Email:</Text>
+                  <Text className="text-[#f49b33] font-bold  mt-2 mb-2">Email:</Text>
                   <TextInput
                     className="h-15 border border-white text-white rounded px-2 "
                     keyboardType="email-address"
@@ -55,7 +55,7 @@ const Signup = () => {
                     </Text>
                   )}
 
-                  <Text>Password:</Text>
+                  <Text className="text-[#f49b33] mt-4 mb-2 font-bold">Password:</Text>
                   <TextInput
                     className="h-15 border border-white text-white rounded px-2 "
                     secureTextEntry
@@ -70,7 +70,7 @@ const Signup = () => {
                   )}
                   <TouchableOpacity
                     onPress={handleSubmit}
-                    className="bg-[#f49b33] text-black p-4 my-2 rounded-lg shadow-lg"
+                    className="bg-[#f49b33] text-black p-4 my-2 rounded-lg shadow-lg mt-10"
                   >
                     <Text className="text-center text-lg font-bold">
                       Sign Up
