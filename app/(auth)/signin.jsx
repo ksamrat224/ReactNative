@@ -14,7 +14,7 @@ import logo from "../../assets/images/dinetimelogo.png";
 import frame from "../../assets/images/Frame.png";
 import validationSchema from "../../utils/signupSchema";
 
-const Signup = () => {
+const Signin = () => {
   const router = useRouter();
   const handleSignup = () => {};
   return (
@@ -78,7 +78,7 @@ const Signup = () => {
                     className="bg-[#f49b33] text-black p-4 my-2 rounded-lg shadow-lg mt-10"
                   >
                     <Text className="text-center text-lg font-bold">
-                      Sign Up
+                      Sign In
                     </Text>
                   </TouchableOpacity>
                 </View>
@@ -111,4 +111,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Signin;
