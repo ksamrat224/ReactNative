@@ -1,4 +1,12 @@
-import { Image, Platform, ScrollView, Text, View } from "react-native";
+import { BlurView } from "expo-blur";
+import {
+  Image,
+  ImageBackground,
+  Platform,
+  ScrollView,
+  Text,
+  View,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import logo from "../../assets/images/dinetimelogo.png";
 
@@ -20,7 +28,17 @@ const home = () => {
         </View>
       </View>
       <ScrollView>
-        
+        <ImageBackground
+          source={require("../../assets/images/homeBanner.png")}
+          resizeMode="cover"
+          className="my-4 w-full h-52 items-center justify-center"
+        >
+          <BlurView intensity={50} tint="light">
+            <Text className="text-center text-3xl font-bold text-white">
+              Dine with your loved ones
+            </Text>
+          </BlurView>
+        </ImageBackground>
       </ScrollView>
     </SafeAreaView>
   );
