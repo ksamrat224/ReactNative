@@ -56,10 +56,10 @@ const Signup = () => {
                   </Text>
                 )}
 
-                 <Text>Password:</Text>
+                <Text>Password:</Text>
                 <TextInput
                   className="h-15 border border-white text-white rounded px-2 "
-                  keyboardType="password-address"
+                  secureTextEntry
                   onChangeText={handleChange("password")}
                   value={values.password}
                   onBlur={handleBlur("password")}
