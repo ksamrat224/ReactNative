@@ -23,7 +23,7 @@ const home = () => {
             >
               Welcome to{" "}
             </Text>
-            <Image source={logo} resizeMode="cover" className="w-20 h-12" />
+            <Image source={logo} resizeMode="cover" className="w-20 h-12 mt-1" />
           </View>
         </View>
       </View>
@@ -33,8 +33,12 @@ const home = () => {
           resizeMode="cover"
           className="my-4 w-full h-52 items-center justify-center"
         >
-          <BlurView intensity={100} tint="dark">
-            <Text className="text-center text-3xl font-bold text-[#f49b33]">
+          <BlurView
+            intensity={Platform.OS === "android" ? 100 : 25}
+            tint="dark"
+            className="w-full p-4 shadow-lg"
+          >
+            <Text className="text-center text-3xl font-bold text-white">
               Dine with your loved ones
             </Text>
           </BlurView>
