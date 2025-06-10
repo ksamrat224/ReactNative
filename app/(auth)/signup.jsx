@@ -84,6 +84,19 @@ const Signup = () => {
                 </View>
               )}
             </Formik>
+            <View>
+               <TouchableOpacity
+              className="flex flex-row items-center justify-center"
+              onPress={() => router.push("/signin")}
+            >
+              <Text className="text-white font-semibold ">
+                Already a User?{" "}
+              </Text>
+              <Text className="text-[#f49b33] font-semibold text-base  underline">
+                Sign In
+              </Text>
+            </TouchableOpacity>
+            </View>
           </View>
         </View>
         <View className="flex-1">
