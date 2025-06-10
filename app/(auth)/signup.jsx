@@ -21,7 +21,7 @@ const Signup = () => {
       <StatusBar barStyle="light-content" backgroundColor={"#1f2937"} />
       <ScrollView contentContainerStyle={{ height: "100%" }}>
         <View className="m-2 flex items-center justify-center">
-          <Image source={logo} style={{ width: "300", height: "300" }} />
+          <Image source={logo} style={{ width: "200", height: "200" }} />
           <Text className="text-white text-lg text-center font-bold mb-8">
             Let's get you started.
           </Text>
