@@ -33,8 +33,8 @@ const home = () => {
           resizeMode="cover"
           className="my-4 w-full h-52 items-center justify-center"
         >
-          <BlurView intensity={50} tint="light">
-            <Text className="text-center text-3xl font-bold text-white">
+          <BlurView intensity={100} tint="dark">
+            <Text className="text-center text-3xl font-bold text-[#f49b33]">
               Dine with your loved ones
             </Text>
           </BlurView>
