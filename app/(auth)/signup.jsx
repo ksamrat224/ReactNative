@@ -69,6 +69,12 @@ const Signup = () => {
                     {errors.password}{" "}
                   </Text>
                 )}
+                <TouchableOpacity
+                  onPress={() => router.push("/signup")}
+                  className="bg-[#f49b33] text-black p-4 my-2 rounded-lg shadow-lg"
+                >
+                  <Text className="text-center text-lg font-bold">Sign Up</Text>
+                </TouchableOpacity>
               </View>
             )}
           </Formik>
@@ -81,12 +87,6 @@ const Signup = () => {
             resizeMode="contain"
           />
         </View>
-        <TouchableOpacity
-          onPress={() => router.push("/signup")}
-          className="bg-[#f49b33] text-black p-4 my-2 rounded-lg shadow-lg"
-        >
-          <Text className="text-center text-lg font-bold">Sign Up</Text>
-        </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   );
