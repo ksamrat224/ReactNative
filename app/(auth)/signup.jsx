@@ -1,4 +1,5 @@
 import { useRouter } from "expo-router";
+import { Formik } from "formik";
 import {
   Image,
   ScrollView,
@@ -11,13 +12,10 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import logo from "../../assets/images/dinetimelogo.png";
 import frame from "../../assets/images/Frame.png";
-import { Formik } from "formik";
 
 const Signup = () => {
   const router = useRouter();
-  const handleSignup = ()=>{
-    
-  }
+  const handleSignup = () => {};
   return (
     <SafeAreaView className={`bg-[#1f2937]`}>
       <StatusBar barStyle="light-content" backgroundColor={"#1f2937"} />
@@ -30,19 +28,35 @@ const Signup = () => {
         </View>
 
         <View className="w-5/6 ">
-          <Formik initialValues={{email:"",password:""}} validationSchema={""} onSubmit={handleSignup}>
-            {({handleChange, handleBlur,handleSubmit, values, errors, touched})=>(
+          <Formik
+            initialValues={{ email: "", password: "" }}
+            validationSchema={""}
+            onSubmit={handleSignup}
+          >
+            {({
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              values,
+              errors,
+              touched,
+            }) => (
               <View className="w-full">
-              <Text>Email:</Text>
-              <TextInput
-              className="h-15 border border-white text-white rounded px-2 "
-              keyboardType="email-address" onChangeText={handleChange("email")} value={values.email} onBlur={handleBlur("email")}/>
-              {touched.email && errors.email && 
-              <Text>{errors.email} </Text>}
+                <Text>Email:</Text>
+                <TextInput
+                  className="h-15 border border-white text-white rounded px-2 "
+                  keyboardType="email-address"
+                  onChangeText={handleChange("email")}
+                  value={values.email}
+                  onBlur={handleBlur("email")}
+                />
+                {touched.email && errors.email && (
+                  <Text className="text-red-600 text-xs mb-2">
+                    {errors.email}{" "}
+                  </Text>
+                )}
               </View>
-            )} 
-
-            
+            )}
           </Formik>
         </View>
 
