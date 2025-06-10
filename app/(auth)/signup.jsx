@@ -64,9 +64,9 @@ const Signup = () => {
                   value={values.password}
                   onBlur={handleBlur("password")}
                 />
-                {touched.email && errors.email && (
+                {touched.password && errors.password && (
                   <Text className="text-red-600 text-xs mb-2">
-                    {errors.email}{" "}
+                    {errors.password}{" "}
                   </Text>
                 )}
               </View>
