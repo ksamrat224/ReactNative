@@ -12,7 +12,7 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import logo from "../../assets/images/dinetimelogo.png";
 import frame from "../../assets/images/Frame.png";
-import validationSchema from "../../utils/signupSchema";
+import validationSchema from "../../utils/authSchema";
 
 const Signup = () => {
   const router = useRouter();

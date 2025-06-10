@@ -12,11 +12,11 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import logo from "../../assets/images/dinetimelogo.png";
 import frame from "../../assets/images/Frame.png";
-import validationSchema from "../../utils/signupSchema";
+import validationSchema from "../../utils/authSchema";
 
 const Signin = () => {
   const router = useRouter();
-  const handleSignup = () => {};
+  const handleSignin = () => {};
   return (
     <SafeAreaView className={`bg-[#1f2937]`}>
       <StatusBar barStyle="light-content" backgroundColor={"#1f2937"} />
@@ -31,7 +31,7 @@ const Signin = () => {
             <Formik
               initialValues={{ email: "", password: "" }}
               validationSchema={validationSchema}
-              onSubmit={handleSignup}
+              onSubmit={handleSignin}
             >
               {({
                 handleChange,
@@ -87,13 +87,11 @@ const Signin = () => {
             <View>
               <TouchableOpacity
                 className="flex flex-row items-center justify-center my-4 p-2"
-                onPress={() => router.push("/signin")}
+                onPress={() => router.push("/signup")}
               >
-                <Text className="text-white font-semibold ">
-                  Already a User?{" "}
-                </Text>
+                <Text className="text-white font-semibold ">New User? </Text>
                 <Text className="text-[#f49b33] font-semibold text-base  underline">
-                  Sign In
+                  Sign Up
                 </Text>
               </TouchableOpacity>
             </View>
