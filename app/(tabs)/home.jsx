@@ -23,7 +23,18 @@ const home = () => {
         className="h-28 mt-2 
         mb-1 rounded-lg"
       />
-      <Text className="text-white text-lg font-bold mb-2">{item.name}</Text>
+      <Text className="text-white text-center text-lg font-bold mb-2">
+        {item.name}
+      </Text>
+      <Text
+        numberOfLines={1}
+        className="text-white text-lg font-bold mb-2 truncate"
+      >
+        {item.address}
+      </Text>
+      <Text className="text-white  mb-2 text-center">
+        Open:{item.opening}- Close:{item.closing}
+      </Text>
     </TouchableOpacity>
   );
   return (
