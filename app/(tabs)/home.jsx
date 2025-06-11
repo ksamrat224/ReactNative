@@ -15,15 +15,15 @@ import logo from "../../assets/images/dinetimelogo.png";
 import { restaurants } from "../../store/restaurant";
 
 const home = () => {
-  const renderItem = ({ item }) => {
+  const renderItem = ({ item }) => (
     <TouchableOpacity>
       <Image
         source={{ uri: item.image }}
         resizeMode="cover"
         className="h-28 mt-2 mb-1 rounded-lg"
       />
-    </TouchableOpacity>;
-  };
+    </TouchableOpacity>
+  );
   return (
     <SafeAreaView style={{ backgroundColor: "#1f2937" }}>
       <View className="flex items-center">
