@@ -46,7 +46,7 @@ const home = () => {
           </View>
         </View>
       </View>
-      <ScrollView>
+      <ScrollView stickyHeaderIndices={[0]}>
         <ImageBackground
           source={require("../../assets/images/homeBanner.png")}
           resizeMode="cover"
@@ -62,19 +62,43 @@ const home = () => {
             </Text>
           </BlurView>
         </ImageBackground>
+        {restaurants.length > 0 ? (
+          <FlatList
+            data={restaurants}
+            renderItem={renderItem}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={{ padding: 16 }}
+            scrollEnabled={true}
+          />
+        ) : (
+          <ActivityIndicator animating color={"#fb9b33"} />
+        )}
+        {restaurants.length > 0 ? (
+          <FlatList
+            data={restaurants}
+            renderItem={renderItem}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={{ padding: 16 }}
+            scrollEnabled={true}
+          />
+        ) : (
+          <ActivityIndicator animating color={"#fb9b33"} />
+        )}
+        {restaurants.length > 0 ? (
+          <FlatList
+            data={restaurants}
+            renderItem={renderItem}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={{ padding: 16 }}
+            scrollEnabled={true}
+          />
+        ) : (
+          <ActivityIndicator animating color={"#fb9b33"} />
+        )}
       </ScrollView>
-      {restaurants.length > 0 ? (
-        <FlatList
-          data={restaurants}
-          renderItem={renderItem}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={{ padding: 16 }}
-          scrollEnabled={true}
-        />
-      ) : (
-        <ActivityIndicator animating color={"#fb9b33"} />
-      )}
     </SafeAreaView>
   );
 };
