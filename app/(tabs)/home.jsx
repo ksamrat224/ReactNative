@@ -31,7 +31,7 @@ const home = () => {
     </TouchableOpacity>
   );
   return (
-    <SafeAreaView style={[{ backgroundColor: "#1f2937" },Platform.OS==="android"&&{paddingBottom:25}]}>
+    <SafeAreaView style={[{ backgroundColor: "#1f2937" },Platform.OS==="android"&&{paddingBottom:25},Platform.OS==="ios"&&{paddingBottom:0}]}>
       <View className="flex items-center">
         <View className="bg-[#4b5563] mt-4 w-11/12 rounded-lg shadow-lg items-center px-4 py-3">
           <View className="flex flex-row items-center">
