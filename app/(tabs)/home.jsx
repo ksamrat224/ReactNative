@@ -7,6 +7,7 @@ import {
   Platform,
   ScrollView,
   Text,
+  TouchableOpacity,
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -14,7 +15,15 @@ import logo from "../../assets/images/dinetimelogo.png";
 import { restaurants } from "../../store/restaurant";
 
 const home = () => {
-  const restaurants = restaurants;
+  const renderItem = ({ item }) => {
+    <TouchableOpacity>
+      <Image
+        source={{ uri: item.image }}
+        resizeMode="cover"
+        className="h-28 mt-2 mb-1 rounded-lg"
+      />
+    </TouchableOpacity>;
+  };
   return (
     <SafeAreaView style={{ backgroundColor: "#1f2937" }}>
       <View className="flex items-center">
@@ -27,7 +36,11 @@ const home = () => {
             >
               Welcome to{" "}
             </Text>
-            <Image source={logo} resizeMode="cover" className="w-20 h-12 mt-1" />
+            <Image
+              source={logo}
+              resizeMode="cover"
+              className="w-20 h-12 mt-1"
+            />
           </View>
         </View>
       </View>
@@ -48,8 +61,18 @@ const home = () => {
           </BlurView>
         </ImageBackground>
       </ScrollView>
-      {restaurants.length>0?
-      <FlatList/>:<ActivityIndicator animating color={"#fb9b33"}/>}
+      {restaurants.length > 0 ? (
+        <FlatList
+          data={restaurants}
+          renderItem={renderItem}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{ padding: 16 }}
+          scrollEnabled={true}
+        />
+      ) : (
+        <ActivityIndicator animating color={"#fb9b33"} />
+      )}
     </SafeAreaView>
   );
 };
