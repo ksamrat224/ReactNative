@@ -23,16 +23,9 @@ const home = () => {
         className="h-28 mt-2 
         mb-1 rounded-lg"
       />
-      <Text className="text-white text-center text-lg font-bold mb-2">
-        {item.name}
-      </Text>
-      <Text
-        numberOfLines={1}
-        className="text-white text-lg font-bold mb-2 truncate"
-      >
-        {item.address}
-      </Text>
-      <Text className="text-white  mb-2 text-center">
+      <Text className="text-white text-lg font-bold mb-2">{item.name}</Text>
+      <Text className="text-white mb-2 ">{item.address}</Text>
+      <Text className="text-white  mb-2">
         Open:{item.opening}- Close:{item.closing}
       </Text>
     </TouchableOpacity>
@@ -73,6 +66,29 @@ const home = () => {
             </Text>
           </BlurView>
         </ImageBackground>
+        <View className="p-4 bg-[#1f2937] flex-row items-center">
+          <Text className="text-3xl text-white mr-2 font-semibold">
+            Special Discount %
+          </Text>
+        </View>
+
+        {restaurants.length > 0 ? (
+          <FlatList
+            data={restaurants}
+            renderItem={renderItem}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={{ padding: 16 }}
+            scrollEnabled={true}
+          />
+        ) : (
+          <ActivityIndicator animating color={"#fb9b33"} />
+        )}
+        <View className="p-4 bg-[#1f2937] flex-row items-center">
+          <Text className="text-3xl text-[#f49b33] mr-2 font-semibold">
+            Our Restaurant
+          </Text>
+        </View>
 
         {restaurants.length > 0 ? (
           <FlatList
