@@ -16,14 +16,14 @@ import { restaurants } from "../../store/restaurant";
 
 const home = () => {
   const renderItem = ({ item }) => (
-    <TouchableOpacity>
+    <TouchableOpacity className="bg-[#4b5563] max-h-64 max-w-xs flex justify-center rounded-lg p-4 mx-4 shadow-md">
       <Image
         source={{ uri: item.image }}
         resizeMode="cover"
         className="h-28 mt-2 
         mb-1 rounded-lg"
       />
-      <Text>{item.name}</Text>
+      <Text className="text-white text-lg font-bold mb-2">{item.name}</Text>
     </TouchableOpacity>
   );
   return (
@@ -50,7 +50,7 @@ const home = () => {
         <ImageBackground
           source={require("../../assets/images/homeBanner.png")}
           resizeMode="cover"
-          className="my-4 w-full h-52 items-center justify-center"
+          className="mb-4 w-full bg-[#1f2937] h-52 items-center justify-center"
         >
           <BlurView
             intensity={Platform.OS === "android" ? 100 : 25}
@@ -62,30 +62,7 @@ const home = () => {
             </Text>
           </BlurView>
         </ImageBackground>
-        {restaurants.length > 0 ? (
-          <FlatList
-            data={restaurants}
-            renderItem={renderItem}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            contentContainerStyle={{ padding: 16 }}
-            scrollEnabled={true}
-          />
-        ) : (
-          <ActivityIndicator animating color={"#fb9b33"} />
-        )}
-        {restaurants.length > 0 ? (
-          <FlatList
-            data={restaurants}
-            renderItem={renderItem}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            contentContainerStyle={{ padding: 16 }}
-            scrollEnabled={true}
-          />
-        ) : (
-          <ActivityIndicator animating color={"#fb9b33"} />
-        )}
+
         {restaurants.length > 0 ? (
           <FlatList
             data={restaurants}
