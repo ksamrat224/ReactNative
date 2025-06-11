@@ -20,8 +20,10 @@ const home = () => {
       <Image
         source={{ uri: item.image }}
         resizeMode="cover"
-        className="h-28 mt-2 mb-1 rounded-lg"
+        className="h-28 mt-2 
+        mb-1 rounded-lg"
       />
+      <Text>{item.name}</Text>
     </TouchableOpacity>
   );
   return (
