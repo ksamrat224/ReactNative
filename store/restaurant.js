@@ -1,3 +1,5 @@
+//restaurant_id ==> id in restaurants
+//slot_id ==> id in slots
 const restaurants = [
   {
     name: "Sea Grill of Merrick Park",
