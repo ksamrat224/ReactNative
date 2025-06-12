@@ -1,5 +1,5 @@
 import { useLocalSearchParams } from "expo-router";
-import { Platform, ScrollView, Text } from "react-native";
+import { Platform, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const Restaurant = () => {
@@ -13,7 +13,12 @@ const Restaurant = () => {
       ]}
     >
       <ScrollView className="h-full">
-        <Text>{restaurant}</Text>
+        <View className="flex-1 my-2 p-2">
+          <Text className="text-xl text-[#f49b33] mr-2 font-semibold ">
+            {restaurant}
+          </Text>
+          <View className="border border-[#f49b33]"/>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
