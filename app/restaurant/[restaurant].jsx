@@ -5,6 +5,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 const Restaurant = () => {
   const { restaurant } = useLocalSearchParams();
   const[restaurantData, setRestaurantData] = useState({});
+  const[carouselData, setCarouselData] = useState({});
+  const[slotsData, setSlotsData] = useState({});
   return (
     <SafeAreaView
       style={[
