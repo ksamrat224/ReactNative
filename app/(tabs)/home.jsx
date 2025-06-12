@@ -1,5 +1,5 @@
 import { BlurView } from "expo-blur";
-import { collection, query } from "firebase/firestore";
+import { collection, getDocs, query } from "firebase/firestore";
 import { useState } from "react";
 import {
   ActivityIndicator,
@@ -34,6 +34,11 @@ const Home = () => {
   );
   const fetchRestaurants = async () => {
     const q = query(collection(db, "restaurants"));
+    const res = await getDocs(q);
+    res.forEach((item)=>{
+      setRestaurants((prev) => [...prev, item.data()]);
+    })
+
   };
 
   return (
