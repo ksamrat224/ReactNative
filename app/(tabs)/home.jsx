@@ -1,6 +1,6 @@
 import { BlurView } from "expo-blur";
 import { collection, getDocs, query } from "firebase/firestore";
-import { useState } from "react";
+import { use, useEffect, useState } from "react";
 import {
   ActivityIndicator,
   FlatList,
@@ -35,11 +35,13 @@ const Home = () => {
   const fetchRestaurants = async () => {
     const q = query(collection(db, "restaurants"));
     const res = await getDocs(q);
-    res.forEach((item)=>{
+    res.forEach((item) => {
       setRestaurants((prev) => [...prev, item.data()]);
-    })
-
+    });
   };
+ useEffect(() => {
+    fetchRestaurants();
+  }, []);
 
   return (
     <SafeAreaView
