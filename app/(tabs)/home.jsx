@@ -1,4 +1,5 @@
 import { BlurView } from "expo-blur";
+import { useEffect } from "react";
 import {
   ActivityIndicator,
   FlatList,
@@ -12,9 +13,13 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import logo from "../../assets/images/dinetimelogo.png";
+import uploadData from "../../config/bulkUpload";
 import { restaurants } from "../../store/restaurant";
 
 const home = () => {
+  useEffect(() => {
+    uploadData();
+  }, []);
   const renderItem = ({ item }) => (
     <TouchableOpacity className="bg-[#4b5563] max-h-64 max-w-xs flex justify-center rounded-lg p-4 mx-4 shadow-md">
       <Image
@@ -31,7 +36,13 @@ const home = () => {
     </TouchableOpacity>
   );
   return (
-    <SafeAreaView style={[{ backgroundColor: "#1f2937" },Platform.OS==="android"&&{paddingBottom:25},Platform.OS==="ios"&&{paddingBottom:0}]}>
+    <SafeAreaView
+      style={[
+        { backgroundColor: "#1f2937" },
+        Platform.OS === "android" && { paddingBottom: 25 },
+        Platform.OS === "ios" && { paddingBottom: 0 },
+      ]}
+    >
       <View className="flex items-center">
         <View className="bg-[#4b5563] mt-4 w-11/12 rounded-lg shadow-lg items-center px-4 py-3">
           <View className="flex flex-row items-center">
