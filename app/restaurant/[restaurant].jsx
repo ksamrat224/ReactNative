@@ -7,6 +7,13 @@ const Restaurant = () => {
   const[restaurantData, setRestaurantData] = useState({});
   const[carouselData, setCarouselData] = useState({});
   const[slotsData, setSlotsData] = useState({});
+  getRestaurantData = async ()=>{
+  try{
+
+  }catch(error) {
+    console.error("Error fetching restaurant data:",error);
+  }
+  }
   return (
     <SafeAreaView
       style={[
