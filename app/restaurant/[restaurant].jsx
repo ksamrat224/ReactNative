@@ -1,7 +1,7 @@
 import { useLocalSearchParams } from "expo-router";
 import { collection, getDocs, query, where } from "firebase/firestore";
-import { useState,useEffect } from "react";
-import { Platform, ScrollView, Text, View } from "react-native";
+import { useEffect, useState } from "react";
+import { FlatList, Platform, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { db } from "../../config/firebaseConfig";
 
@@ -59,9 +59,9 @@ const Restaurant = () => {
       console.error("Error fetching restaurant data:", error);
     }
   };
-  useEffect(()=>{
-  getRestaurantData();
-  },[]);
+  useEffect(() => {
+    getRestaurantData();
+  }, []);
   return (
     <SafeAreaView
       style={[
@@ -76,6 +76,16 @@ const Restaurant = () => {
             {restaurant}
           </Text>
           <View className="border border-[#f49b33]" />
+        </View>
+        <View className="h-64 max-w-[98%] mx-2 rounded-[250px]">
+          <FlatList
+            ref={flatListRef}
+            data={carouselData[0]?.images}
+            renderItem={carouselItem}
+            horizontal
+            scrollEnabled={true}
+            style={{ borderRadius: 25 }}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
