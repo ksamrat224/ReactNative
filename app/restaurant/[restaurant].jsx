@@ -1,5 +1,6 @@
 import { useLocalSearchParams } from "expo-router";
 import { collection, getDocs, query, where } from "firebase/firestore";
+import { useState } from "react";
 import { Platform, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -28,6 +29,10 @@ const Restaurant = () => {
           where("res_id", "==", doc.ref)
         );
         const carouselSnapshot = await getDocs(carouselQuery);
+        if (carouselSnapshot.empty) {
+          console.error("No restaurant found with that name");
+          return;
+        }
         const carouselImages = [];
         carouselSnapshot.forEach((carouselData) => {
           carouselImages.push(carouselData.data());
@@ -39,6 +44,10 @@ const Restaurant = () => {
           where("ref_id", "==", doc.ref)
         );
         const slotSnapshot = await getDocs(slotQuery);
+        if (slotSnapshot.empty) {
+          console.error("No restaurant found with that name");
+          return;
+        }
         const slots = [];
         slotSnapshot.forEach((slotData) => {
           slots.push(slotData.data());
