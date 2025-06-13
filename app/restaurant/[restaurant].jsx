@@ -1,19 +1,24 @@
 import { useLocalSearchParams } from "expo-router";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { Platform, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const Restaurant = () => {
   const { restaurant } = useLocalSearchParams();
-  const[restaurantData, setRestaurantData] = useState({});
-  const[carouselData, setCarouselData] = useState({});
-  const[slotsData, setSlotsData] = useState({});
-  getRestaurantData = async ()=>{
-  try{
-
-  }catch(error) {
-    console.error("Error fetching restaurant data:",error);
-  }
-  }
+  const [restaurantData, setRestaurantData] = useState({});
+  const [carouselData, setCarouselData] = useState({});
+  const [slotsData, setSlotsData] = useState({});
+  getRestaurantData = async () => {
+    try {
+      const restaurantQuery = query(
+        collection(db, "restaurants"),
+        where("name", "==", restaurant)
+      );
+      const restaurantSnapshot = await getDocs(restaurantQuery);
+    } catch (error) {
+      console.error("Error fetching restaurant data:", error);
+    }
+  };
   return (
     <SafeAreaView
       style={[
@@ -27,7 +32,7 @@ const Restaurant = () => {
           <Text className="text-xl text-[#f49b33] mr-2 font-semibold ">
             {restaurant}
           </Text>
-          <View className="border border-[#f49b33]"/>
+          <View className="border border-[#f49b33]" />
         </View>
       </ScrollView>
     </SafeAreaView>
