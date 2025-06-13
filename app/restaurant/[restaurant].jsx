@@ -15,6 +15,14 @@ const Restaurant = () => {
         where("name", "==", restaurant)
       );
       const restaurantSnapshot = await getDocs(restaurantQuery);
+      if (restaurantSnapshot.empty) {
+        console.error("No restaurant found with that name");
+        return;
+      }
+      for (const doc of restaurantSnapshot.docs) {
+        const restaurantData = doc.data();
+        setRestaurantData(restaurantData);
+      }
     } catch (error) {
       console.error("Error fetching restaurant data:", error);
     }
