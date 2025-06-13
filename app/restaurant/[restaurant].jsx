@@ -22,11 +22,28 @@ const Restaurant = () => {
       for (const doc of restaurantSnapshot.docs) {
         const restaurantData = doc.data();
         setRestaurantData(restaurantData);
+
         const carouselQuery = query(
           collection(db, "carousel"),
           where("res_id", "==", doc.ref)
         );
         const carouselSnapshot = await getDocs(carouselQuery);
+        const carouselImages = [];
+        carouselSnapshot.forEach((carouselData) => {
+          carouselImages.push(carouselData.data());
+        });
+        setCarouselData(carouselImages);
+
+        const slotQuery = query(
+          collection(db, "slot"),
+          where("ref_id", "==", doc.ref)
+        );
+        const slotSnapshot = await getDocs(slotQuery);
+        const slots = [];
+        slotSnapshot.forEach((slotData) => {
+          slots.push(slotData.data());
+        });
+        setSlotsData(slots);
       }
     } catch (error) {
       console.error("Error fetching restaurant data:", error);
