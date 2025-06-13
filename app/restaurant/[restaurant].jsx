@@ -22,6 +22,10 @@ const Restaurant = () => {
       for (const doc of restaurantSnapshot.docs) {
         const restaurantData = doc.data();
         setRestaurantData(restaurantData);
+        const carouselQuery = query(
+          collection(db, "carousel"),
+          where("res_id", "==", doc.ref)
+        );
       }
     } catch (error) {
       console.error("Error fetching restaurant data:", error);
