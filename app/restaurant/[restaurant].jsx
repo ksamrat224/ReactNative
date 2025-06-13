@@ -1,15 +1,16 @@
 import { useLocalSearchParams } from "expo-router";
 import { collection, getDocs, query, where } from "firebase/firestore";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { Platform, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { db } from "../../config/firebaseConfig";
 
 const Restaurant = () => {
   const { restaurant } = useLocalSearchParams();
   const [restaurantData, setRestaurantData] = useState({});
   const [carouselData, setCarouselData] = useState({});
   const [slotsData, setSlotsData] = useState({});
-  getRestaurantData = async () => {
+  const getRestaurantData = async () => {
     try {
       const restaurantQuery = query(
         collection(db, "restaurants"),
@@ -30,7 +31,7 @@ const Restaurant = () => {
         );
         const carouselSnapshot = await getDocs(carouselQuery);
         if (carouselSnapshot.empty) {
-          console.error("No restaurant found with that name");
+          console.error("No carousel images found for this restaurant");
           return;
         }
         const carouselImages = [];
@@ -45,7 +46,7 @@ const Restaurant = () => {
         );
         const slotSnapshot = await getDocs(slotQuery);
         if (slotSnapshot.empty) {
-          console.error("No restaurant found with that name");
+          console.error("No slots found for this restaurant");
           return;
         }
         const slots = [];
@@ -58,6 +59,9 @@ const Restaurant = () => {
       console.error("Error fetching restaurant data:", error);
     }
   };
+  useEffect(()=>{
+  getRestaurantData();
+  },[]);
   return (
     <SafeAreaView
       style={[
