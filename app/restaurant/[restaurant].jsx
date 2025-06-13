@@ -26,6 +26,7 @@ const Restaurant = () => {
           collection(db, "carousel"),
           where("res_id", "==", doc.ref)
         );
+        const carouselSnapshot = await getDocs(carouselQuery);
       }
     } catch (error) {
       console.error("Error fetching restaurant data:", error);
