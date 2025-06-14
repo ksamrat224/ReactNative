@@ -236,6 +236,7 @@ const Restaurant = () => {
             {restaurantData?.closing || "Opening hours not available"}
           </Text>
         </View>
+        
       </ScrollView>
     </SafeAreaView>
   );
