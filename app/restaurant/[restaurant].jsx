@@ -78,9 +78,16 @@ const Restaurant = () => {
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "row",
-            left: "50%",transform: "translateX(-50%)",
+            left: "50%",
+            transform: "translateX(-50%)",
+            zIndex: 10,
+            bottom: 15,
           }}
-        ></View>
+        >
+          {carouselData[0].images?.map((_, index) => (
+            <View className={`bg-white h-2 w-2 p-1 mx-1 rounded-full`} />
+          ))}
+        </View>
         <View
           style={{
             position: "absolute",
