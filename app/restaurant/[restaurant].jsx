@@ -219,11 +219,14 @@ const Restaurant = () => {
         </View>
         <View className="flex-1 flex-row p-2 mt-2">
           <Ionicons name="location-sharp" size={24} color="#f49b33" />
+          <Text className="max-w-[75%] text-white">
+            {restaurantData?.address || "Address not available"}| {"  "}
           <Text
             className="underline flex items-center text-[#f49b33] italic mt-1 font-semibold"
             onPress={handleLocation}
           >
             Get Direction
+          </Text>
           </Text>
         </View>
       </ScrollView>
