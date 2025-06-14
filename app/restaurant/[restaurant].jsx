@@ -181,6 +181,9 @@ const Restaurant = () => {
   useEffect(() => {
     getRestaurantData();
   }, []);
+  const handleLocation=()=>{
+    
+  }
   return (
     <SafeAreaView
       style={[
@@ -207,8 +210,9 @@ const Restaurant = () => {
             showsHorizontalScrollIndicator={false}
           />
         </View>
-        <View>
+        <View className="flex-1 flex-row p-2 mt-2">
           <Ionicons name="location-sharp" size={24} color="#f49b33" />
+          <Text onPress={handleLocation}>Get Direction</Text>
         </View>
       </ScrollView>
     </SafeAreaView>
