@@ -23,10 +23,7 @@ const Restaurant = () => {
   const [slotsData, setSlotsData] = useState({});
   const carouselItem = ({ item }) => {
     return (
-      <View
-        style={{ width: windowWidth - 2 }}
-        className="h-64 relative rounded-[25px]"
-      >
+      <View style={{ width: windowWidth - 2 }} className="h-64 relative ">
         <View
           style={{
             position: "absolute",
