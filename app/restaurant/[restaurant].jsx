@@ -133,6 +133,7 @@ const Restaurant = () => {
             horizontal
             scrollEnabled={true}
             style={{ borderRadius: 25 }}
+            showsHorizontalScrollIndicator={false}
           />
         </View>
       </ScrollView>
