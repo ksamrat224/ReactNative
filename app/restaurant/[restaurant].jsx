@@ -48,7 +48,10 @@ const Restaurant = () => {
               backgroundColor: "black",
               marginRight: 20,
               marginLeft: 5,
+              borderRadius: 25,
             }}
+            className="h-full w-full"
+            resizeMode="cover"
           />
         </View>
       </View>
