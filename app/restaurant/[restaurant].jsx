@@ -1,9 +1,11 @@
+import Ionicons from "@expo/vector-icons/Ionicons";
 import { useLocalSearchParams } from "expo-router";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { useEffect, useRef, useState } from "react";
 import {
   Dimensions,
   FlatList,
+  Image,
   Platform,
   ScrollView,
   Text,
@@ -11,7 +13,6 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { db } from "../../config/firebaseConfig";
-import Ionicons from '@expo/vector-icons/Ionicons';
 
 const Restaurant = () => {
   const { restaurant } = useLocalSearchParams();
@@ -38,6 +39,17 @@ const Restaurant = () => {
           }}
         >
           <Ionicons name="arrow-forward" size={24} color="white" />
+        </View>
+        <View>
+          <Image
+            source={{ uri: item }}
+            style={{
+              opacity: 0.5,
+              backgroundColor: "black",
+              marginRight: 20,
+              marginLeft: 5,
+            }}
+          />
         </View>
       </View>
     );
