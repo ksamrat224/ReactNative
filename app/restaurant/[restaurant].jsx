@@ -74,6 +74,16 @@ const Restaurant = () => {
         <View
           style={{
             position: "absolute",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "row",
+            left: "50%",
+          }}
+        ></View>
+        <View
+          style={{
+            position: "absolute",
             top: "50%",
             backgroundColor: "rgba(0,0,0,0.6)",
             borderRadius: 50,
