@@ -28,7 +28,7 @@ const Restaurant = () => {
           style={{
             position: "absolute",
             top: "50%",
-            backgroundColor: "rgba(0,0,0,0.6",
+            backgroundColor: "rgba(0,0,0,0.6)",
             borderRadius: 50,
             padding: 5,
             zIndex: 10,
