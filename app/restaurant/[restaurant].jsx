@@ -6,6 +6,7 @@ import {
   Dimensions,
   FlatList,
   Image,
+  Linking,
   Platform,
   ScrollView,
   Text,
@@ -181,9 +182,15 @@ const Restaurant = () => {
   useEffect(() => {
     getRestaurantData();
   }, []);
-  const handleLocation=()=>{
-    
-  }
+  const handleLocation = async () => {
+    const url = "https://www.google.com/maps";
+    const supported = await Linking.canOpenURL(url);
+    if (supported) {
+      await Linking.openURL(url);
+    } else {
+      console.error("Don't know how to open URI: " + url);
+    }
+  };
   return (
     <SafeAreaView
       style={[
@@ -212,7 +219,12 @@ const Restaurant = () => {
         </View>
         <View className="flex-1 flex-row p-2 mt-2">
           <Ionicons name="location-sharp" size={24} color="#f49b33" />
-          <Text onPress={handleLocation}>Get Direction</Text>
+          <Text
+            className="underline flex items-center text-[#f49b33] italic mt-1 font-semibold"
+            onPress={handleLocation}
+          >
+            Get Direction
+          </Text>
         </View>
       </ScrollView>
     </SafeAreaView>
