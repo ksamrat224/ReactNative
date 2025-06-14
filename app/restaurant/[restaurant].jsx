@@ -78,7 +78,7 @@ const Restaurant = () => {
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "row",
-            left: "50%",
+            left: "50%",transform: "translateX(-50%)",
           }}
         ></View>
         <View
