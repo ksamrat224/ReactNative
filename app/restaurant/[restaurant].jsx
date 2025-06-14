@@ -61,6 +61,24 @@ const Restaurant = () => {
             borderRadius: 50,
             padding: 5,
             zIndex: 10,
+            left: "2%",
+          }}
+        >
+          <Ionicons
+            onPress={handlePrevImage}
+            name="arrow-back"
+            size={24}
+            color="white"
+          />
+        </View>
+        <View
+          style={{
+            position: "absolute",
+            top: "50%",
+            backgroundColor: "rgba(0,0,0,0.6)",
+            borderRadius: 50,
+            padding: 5,
+            zIndex: 10,
             right: "6%",
           }}
         >
