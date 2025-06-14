@@ -207,6 +207,9 @@ const Restaurant = () => {
             showsHorizontalScrollIndicator={false}
           />
         </View>
+        <View>
+          <Ionicons name="location-sharp" size={24} color="#f49b33" />
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
