@@ -18,9 +18,13 @@ const Restaurant = () => {
   const { restaurant } = useLocalSearchParams();
   const flatListRef = useRef(null);
   const windowWidth = Dimensions.get("window").width;
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [restaurantData, setRestaurantData] = useState({});
   const [carouselData, setCarouselData] = useState({});
   const [slotsData, setSlotsData] = useState({});
+  const handleNextImage=()=>{
+    
+  }
   const carouselItem = ({ item }) => {
     return (
       <View style={{ width: windowWidth - 2 }} className="h-64 relative ">
@@ -35,7 +39,7 @@ const Restaurant = () => {
             right: "6%",
           }}
         >
-          <Ionicons name="arrow-forward" size={24} color="white" />
+          <Ionicons onPress={handleNextImage} name="arrow-forward" size={24} color="white" />
         </View>
         <View>
           <Image
@@ -128,7 +132,7 @@ const Restaurant = () => {
             data={carouselData[0]?.images}
             renderItem={carouselItem}
             horizontal
-            scrollEnabled={true}
+            scrollEnabled={false}
             style={{ borderRadius: 25 }}
             showsHorizontalScrollIndicator={false}
           />
