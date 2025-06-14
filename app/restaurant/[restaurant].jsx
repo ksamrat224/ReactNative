@@ -85,7 +85,12 @@ const Restaurant = () => {
           }}
         >
           {carouselData[0].images?.map((_, index) => (
-            <View key={index} className={`bg-white h-2 w-2 p-1 mx-1 rounded-full`} />
+            <View
+              key={index}
+              className={`bg-white h-2 w-2 ${
+                index == currentIndex && "h-3 w-3"
+              } p-1 mx-1 rounded-full`}
+            />
           ))}
         </View>
         <View
