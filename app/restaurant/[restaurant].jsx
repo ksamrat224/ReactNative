@@ -20,7 +20,24 @@ const Restaurant = () => {
   const [carouselData, setCarouselData] = useState({});
   const [slotsData, setSlotsData] = useState({});
   const carouselItem = ({ item }) => {
-    return <View style={{ width: windowWidth - 2 }}></View>;
+    return (
+      <View
+        style={{ width: windowWidth - 2 }}
+        className="h-64 relative rounded-[25px]"
+      >
+        <View
+          style={{
+            position: "absolute",
+            top: "50%",
+            backgroundColor: "rgba(0,0,0,0.6",
+            borderRadius: 50,
+            padding: 5,
+            zIndex: 10,
+            right: "6%",
+          }}
+        ></View>
+      </View>
+    );
   };
 
   const getRestaurantData = async () => {
