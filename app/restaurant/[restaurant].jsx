@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { db } from "../../config/firebaseConfig";
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 const Restaurant = () => {
   const { restaurant } = useLocalSearchParams();
@@ -35,7 +36,9 @@ const Restaurant = () => {
             zIndex: 10,
             right: "6%",
           }}
-        ></View>
+        >
+          <Ionicons name="arrow-forward" size={24} color="white" />
+        </View>
       </View>
     );
   };
