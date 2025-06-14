@@ -22,9 +22,19 @@ const Restaurant = () => {
   const [restaurantData, setRestaurantData] = useState({});
   const [carouselData, setCarouselData] = useState({});
   const [slotsData, setSlotsData] = useState({});
-  const handleNextImage=()=>{
-    
-  }
+  const carouselLength = carouselData[0]?.images?.length;
+  const handleNextImage = () => {
+    if (currentIndex < carouselLength - 1) {
+      const newIndex = currentIndex + 1;
+      setCurrentIndex(newIndex);
+      flatListRef.current.scrollToIndex({ index: newIndex, animated: true });
+    }
+    if (currentIndex === carouselLength - 1) {
+      const newIndex = 0;
+      setCurrentIndex(newIndex);
+      flatListRef.current.scrollToIndex({ index: newIndex, animated: true });
+    }
+  };
   const carouselItem = ({ item }) => {
     return (
       <View style={{ width: windowWidth - 2 }} className="h-64 relative ">
@@ -39,7 +49,12 @@ const Restaurant = () => {
             right: "6%",
           }}
         >
-          <Ionicons onPress={handleNextImage} name="arrow-forward" size={24} color="white" />
+          <Ionicons
+            onPress={handleNextImage}
+            name="arrow-forward"
+            size={24}
+            color="white"
+          />
         </View>
         <View>
           <Image
