@@ -25,14 +25,29 @@ const Restaurant = () => {
   const carouselLength = carouselData[0]?.images?.length;
   const handleNextImage = () => {
     if (currentIndex < carouselLength - 1) {
-      const newIndex = currentIndex + 1;
-      setCurrentIndex(newIndex);
-      flatListRef.current.scrollToIndex({ index: newIndex, animated: true });
+      const nextIndex = currentIndex + 1;
+      setCurrentIndex(nextIndex);
+      flatListRef.current.scrollToIndex({ index: nextIndex, animated: true });
     }
     if (currentIndex === carouselLength - 1) {
-      const newIndex = 0;
-      setCurrentIndex(newIndex);
-      flatListRef.current.scrollToIndex({ index: newIndex, animated: true });
+      const nextIndex = 0;
+      setCurrentIndex(nextIndex);
+      flatListRef.current.scrollToIndex({ index: nextIndex, animated: true });
+    }
+  };
+  const handlePrevImage = () => {
+    if (currentIndex > 0) {
+      const prevIndex = currentIndex - 1;
+      setCurrentIndex(prevIndex);
+      flatListRef.current.scrollToIndex({ index: prevIndex, animated: true });
+    }
+    if (currentIndex === 0) {
+      const prevIndex = carouselLength - 1;
+      setCurrentIndex(prevIndex);
+      flatListRef.current.scrollToIndex({
+        index: prevIndex,
+        animated: true,
+      });
     }
   };
   const carouselItem = ({ item }) => {
