@@ -13,6 +13,7 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import DatePicker from "../../components/restaurant/DatePicker";
 import { db } from "../../config/firebaseConfig";
 
 const Restaurant = () => {
@@ -236,7 +237,9 @@ const Restaurant = () => {
             {restaurantData?.closing || "Opening hours not available"}
           </Text>
         </View>
-        
+        <View>
+          <DatePicker />
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
