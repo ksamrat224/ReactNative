@@ -239,12 +239,22 @@ const Restaurant = () => {
             {restaurantData?.closing || "Opening hours not available"}
           </Text>
         </View>
-        <View className="flex-1 flex-row p-2 ">
-          <View className="flex flex-row items-center">
-            <Ionicons name="calendar" size={20} color="#f49b33" />
-            <Text className="text-white mx-2">Select Booking Date</Text>
+        <View>
+          <View className="flex-1 flex-row p-2 ">
+            <View className="justify-end items-center flex-row">
+              <Ionicons name="calendar" size={20} color="#f49b33" />
+              <Text className="text-white mx-2">Select Booking Date</Text>
+            </View>
+            <DatePicker date={date} setDate={setDate} />
           </View>
-          <DatePicker date={date} setDate={setDate} />
+
+          <View className="flex-1 flex-row p-2 ">
+            <View className="justify-end items-center flex-row">
+              <Ionicons name="calendar" size={20} color="#f49b33" />
+              <Text className="text-white mx-2">Select number of Guest</Text>
+            </View>
+            <DatePicker date={date} setDate={setDate} />
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
