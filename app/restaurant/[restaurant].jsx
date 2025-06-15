@@ -14,6 +14,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import DatePicker from "../../components/restaurant/DatePicker";
+import GuestPicker from "../../components/restaurant/GuestPicker";
 import { db } from "../../config/firebaseConfig";
 
 const Restaurant = () => {
@@ -24,7 +25,7 @@ const Restaurant = () => {
   const [restaurantData, setRestaurantData] = useState({});
   const [carouselData, setCarouselData] = useState({});
   const [date, setDate] = useState(new Date());
-
+  const [selectedNumber, setSelectedNumber] = useState(1);
   const [slotsData, setSlotsData] = useState({});
   const carouselLength = carouselData[0]?.images?.length;
   const handleNextImage = () => {
@@ -253,7 +254,10 @@ const Restaurant = () => {
               <Ionicons name="calendar" size={20} color="#f49b33" />
               <Text className="text-white mx-2">Select number of Guest</Text>
             </View>
-            <DatePicker date={date} setDate={setDate} />
+            <GuestPicker
+              selectedNumber={selectedNumber}
+              setSelectedNumber={setSelectedNumber}
+            />
           </View>
         </View>
       </ScrollView>
