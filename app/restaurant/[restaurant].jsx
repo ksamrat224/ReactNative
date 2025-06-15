@@ -240,19 +240,22 @@ const Restaurant = () => {
             {restaurantData?.closing || "Opening hours not available"}
           </Text>
         </View>
-        <View>
-          <View className="flex-1 flex-row p-2 ">
-            <View className="justify-end items-center flex-row">
+        <View className="flex-1 border m-2 p-2 border-[#f49b33] rounded-lg">
+          <View className="flex-1 flex-row m-2 p-2 justify-end items-center">
+            <View className="flex-1 flex-row">
               <Ionicons name="calendar" size={20} color="#f49b33" />
-              <Text className="text-white mx-2">Select Booking Date</Text>
+              <Text className="text-white mx-2 text-base">
+                Select booking date
+              </Text>
             </View>
             <DatePicker date={date} setDate={setDate} />
           </View>
-
-          <View className="flex-1 flex-row p-2 ">
-            <View className="justify-end items-center flex-row">
-              <Ionicons name="calendar" size={20} color="#f49b33" />
-              <Text className="text-white mx-2">Select number of Guest</Text>
+          <View className="flex-1 flex-row bg-[#474747] rounded-lg  m-2 p-2 justify-end items-center">
+            <View className="flex-1 flex-row">
+              <Ionicons name="people" size={20} color="#f49b33" />
+              <Text className="text-white mx-2 text-base">
+                Select number of guests
+              </Text>
             </View>
             <GuestPicker
               selectedNumber={selectedNumber}

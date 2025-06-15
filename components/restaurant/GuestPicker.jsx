@@ -1,6 +1,11 @@
 import { Text, TouchableOpacity, View } from "react-native";
 
-const GuestPicker = () => {
+const GuestPicker = ({selectedNumber}) => {
+    const increment = () => {
+    }
+    const decrement = ()=>{
+        
+    }
   return (
     <View className="flex flex-row items-center rounded-lg text-white text-base">
       <TouchableOpacity onPress={decrement} className="rounded">
