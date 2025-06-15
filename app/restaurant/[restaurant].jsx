@@ -266,7 +266,13 @@ const Restaurant = () => {
           </View>
         </View>
         <View className="flex-1">
-          <FindSlots slots={slotsData} selectedSlot={selectedSlot} />
+          <FindSlots
+            date={date}
+            selectedNumber={selectedNumber}
+            slots={slotsData}
+            selectedSlot={selectedSlot}
+            setSelectedSlot={setSelectedSlot}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
