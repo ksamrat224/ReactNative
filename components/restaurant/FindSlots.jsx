@@ -1,12 +1,19 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { Text, View } from "react-native";
 
-const FindSlots = ({slotsData,selectedSlot,setSelectedSlot,selectedNumber}) => {
+const FindSlots = ({
+  date,
+  slots,
+  selectedSlot,
+  setSelectedSlot,
+  selectedNumber,
+}) => {
+  const [slotsVisible, setSlotsVisible] = useState(false);
+
   return (
     <View>
       <Text>FindSlots</Text>
     </View>
-  )
-}
+  );
+};
 
-export default FindSlots
+export default FindSlots;
