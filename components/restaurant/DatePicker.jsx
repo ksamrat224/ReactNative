@@ -2,9 +2,8 @@ import DateTimePicker from "@react-native-community/datetimepicker";
 import { useState } from "react";
 import { Platform, Text, TouchableOpacity, View } from "react-native";
 
-const DatePicker = () => {
+const DatePicker = ({date, setDate}) => {
   const [show, setShow] = useState(false);
-  const [date, setDate] = useState(new Date());
 
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate || date;
@@ -17,7 +16,7 @@ const DatePicker = () => {
   };
 
   return (
-    <View className="flex flex-row">
+    <View className="flex flex-row p-2">
       <TouchableOpacity
         onPress={handlePress}
         className={`flex flex-row w-full rounded-lg text-white text-base p-2 items-center justify-between ${
@@ -31,6 +30,8 @@ const DatePicker = () => {
             </Text>
             {show && (
               <DateTimePicker
+                accentColor="#f49b33"
+                textColor="#f49b33"
                 value={date}
                 onChange={onChange}
                 mode="date"

@@ -23,6 +23,8 @@ const Restaurant = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [restaurantData, setRestaurantData] = useState({});
   const [carouselData, setCarouselData] = useState({});
+  const [date, setDate] = useState(new Date());
+
   const [slotsData, setSlotsData] = useState({});
   const carouselLength = carouselData[0]?.images?.length;
   const handleNextImage = () => {
@@ -238,7 +240,7 @@ const Restaurant = () => {
           </Text>
         </View>
         <View>
-          <DatePicker />
+          <DatePicker date={date} setDate={setDate} />
         </View>
       </ScrollView>
     </SafeAreaView>
