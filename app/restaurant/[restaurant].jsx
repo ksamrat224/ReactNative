@@ -14,9 +14,9 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import DatePicker from "../../components/restaurant/DatePicker";
+import FindSlots from "../../components/restaurant/FindSlots";
 import GuestPicker from "../../components/restaurant/GuestPicker";
 import { db } from "../../config/firebaseConfig";
-import FindSlots from "../../components/restaurant/FindSlots";
 
 const Restaurant = () => {
   const { restaurant } = useLocalSearchParams();
@@ -265,8 +265,8 @@ const Restaurant = () => {
             />
           </View>
         </View>
-        <View>
-          <FindSlots/>
+        <View className="flex-1">
+          <FindSlots slots={slotsData} selectedSlot={selectedSlot} />
         </View>
       </ScrollView>
     </SafeAreaView>
