@@ -27,6 +27,7 @@ const Restaurant = () => {
   const [date, setDate] = useState(new Date());
   const [selectedNumber, setSelectedNumber] = useState(1);
   const [slotsData, setSlotsData] = useState({});
+  const [selectedSlot, setSelectedSlot] = useState(null);
   const carouselLength = carouselData[0]?.images?.length;
   const handleNextImage = () => {
     if (currentIndex < carouselLength - 1) {
