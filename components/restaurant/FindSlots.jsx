@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { View } from "react-native";
 
 const FindSlots = ({
   date,
@@ -10,8 +10,10 @@ const FindSlots = ({
   const [slotsVisible, setSlotsVisible] = useState(false);
 
   return (
-    <View>
-      <Text>FindSlots</Text>
+    <View className="flex-1">
+      <View className={`flex ${selectedSlot != null && "flex-row"}`}>
+        
+      </View>
     </View>
   );
 };
