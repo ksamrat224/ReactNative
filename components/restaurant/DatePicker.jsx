@@ -18,10 +18,17 @@ const DatePicker = () => {
 
   return (
     <View className="flex flex-row">
-      <TouchableOpacity onPress={handlePress}>
+      <TouchableOpacity
+        onPress={handlePress}
+        className={`flex flex-row w-full rounded-lg text-white text-base p-2 items-center justify-between ${
+          Platform.OS === "android" ? "bg-[#474747]" : "bg-[#1C1C1E]"
+        }`}
+      >
         {Platform.OS === "android" && (
           <>
-            <Text className="text-white">{date.toLocaleDateString()}</Text>
+            <Text className="text-white px-2 py-1 justify-center bg-[#474747]">
+              {date.toLocaleDateString()}
+            </Text>
             {show && (
               <DateTimePicker
                 value={date}
