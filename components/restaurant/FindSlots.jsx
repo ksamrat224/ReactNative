@@ -12,14 +12,19 @@ const FindSlots = ({
   const handlePress = () => {
     setSlotsVisible(!slotsVisible);
   };
-  const handleSlotPress = (slot)=>{
-    
-  }
+  const handleSlotPress = (slot) => {
+    let prevSlot = selectedSlot;
+    if (prevSlot === slot) {
+      setSelectedSlot(null);
+    } else {
+      setSelectedSlot(slot);
+    }
+  };
 
   return (
     <View className="flex-1">
       <View className={`flex ${selectedSlot != null && "flex-row"}`}>
-        <View className={`${selectedSlot != null && flex - 1}`}>
+        <View className={`${selectedSlot != null && "flex-1"}`}>
           <TouchableOpacity onPress={handlePress}>
             <Text className="text-center text-lg font-bold  bg-[#f49b33] p-2 my-3 mx-2 rounded-lg">
               Find Slots
@@ -27,7 +32,7 @@ const FindSlots = ({
           </TouchableOpacity>
         </View>
         {selectedSlot != null && (
-          <View className="flex-1 my-4">
+          <View className="flex-1 ">
             <TouchableOpacity onPress={handlePress}>
               <Text className="text-center text-lg font-bold  bg-[#f49b33] p-2 my-3 mx-2 rounded-lg text-white">
                 Book Slots
@@ -42,7 +47,7 @@ const FindSlots = ({
             <TouchableOpacity
               key={index}
               className={`m-2 p-2 bg-[#f49b33] rounded-lg items-center justify-center`}
-              onPress={()=>handleSlotPress(slot)}
+              onPress={() => handleSlotPress(slot)}
             >
               <Text className="text-white font-bold">{slot}</Text>
             </TouchableOpacity>
