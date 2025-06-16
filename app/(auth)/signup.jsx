@@ -1,4 +1,6 @@
 import { useRouter } from "expo-router";
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 import { Formik } from "formik";
 import {
   Image,
@@ -16,7 +18,19 @@ import validationSchema from "../../utils/authSchema";
 
 const Signup = () => {
   const router = useRouter();
-  const handleSignup = () => {};
+  const auth = getAuth();
+  const db = getFirestore();
+  const handleSignup = async (values) => {
+    try {
+      const userCredentials = await createUserWithEmailAndPassword(
+        auth,
+        values.email,
+        values.password
+      );
+    } catch (error) {
+      console.error("Signup error:", error);
+    }
+  };
   return (
     <SafeAreaView className={`bg-[#1f2937]`}>
       <StatusBar barStyle="light-content" backgroundColor={"#1f2937"} />
