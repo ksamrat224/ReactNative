@@ -179,7 +179,7 @@ const Restaurant = () => {
         slotSnapshot.forEach((slotData) => {
           slots.push(slotData.data());
         });
-        setSlotsData(slots);
+        setSlotsData(slots[0]?.slots);
       }
     } catch (error) {
       console.error("Error fetching restaurant data:", error);
