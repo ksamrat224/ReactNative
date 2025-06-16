@@ -12,7 +12,6 @@ const FindSlots = ({
   const handlePress = () => {
     setSlotsVisible(!slotsVisible);
   };
-  console.log(slots);
 
   return (
     <View className="flex-1">
@@ -34,7 +33,7 @@ const FindSlots = ({
           </View>
         )}
       </View>
-      {slotsVisible && (
+      {slotsVisible &&  (
         <View>
           {slots.map((slot, index) => (
             <TouchableOpacity key={index}>
