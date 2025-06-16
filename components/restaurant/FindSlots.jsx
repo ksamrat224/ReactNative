@@ -42,15 +42,16 @@ const FindSlots = ({
         )}
       </View>
       {slotsVisible && (
-        <View className="flex-wrap flex-row mx-2 p-2 bg-[#474747] rounded-lg">
+        <View className="flex-wrap flex-row my-2 p-2 bg-[#474747] rounded-lg">
           {slots.map((slot, index) => (
             <TouchableOpacity
               key={index}
-              className={`m-2 p-2 bg-[#f49b33] rounded-lg items-center justify-center`}
+              className={`m-2 p-2 bg-[#f49b33] rounded-lg items-center justify-center `}
               onPress={() => handleSlotPress(slot)}
               disabled={
                 selectedSlot == slot || selectedSlot == null ? false : true
               }
+              style={{ opacity: selectedSlot && selectedSlot !== slot ? 0.5 : 1 }}
             >
               <Text className="text-white font-bold">{slot}</Text>
             </TouchableOpacity>
