@@ -48,6 +48,9 @@ const FindSlots = ({
               key={index}
               className={`m-2 p-2 bg-[#f49b33] rounded-lg items-center justify-center`}
               onPress={() => handleSlotPress(slot)}
+              disabled={
+                selectedSlot == slot || selectedSlot == null ? false : true
+              }
             >
               <Text className="text-white font-bold">{slot}</Text>
             </TouchableOpacity>
