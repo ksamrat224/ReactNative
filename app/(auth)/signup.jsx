@@ -1,6 +1,6 @@
 import { useRouter } from "expo-router";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, setDoc } from "firebase/firestore";
 import { Formik } from "formik";
 import {
   Image,
@@ -27,6 +27,8 @@ const Signup = () => {
         values.email,
         values.password
       );
+      const user = userCredentials.user;
+      await setDoc
     } catch (error) {
       console.error("Signup error:", error);
     }
