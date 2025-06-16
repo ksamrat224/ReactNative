@@ -36,7 +36,10 @@ const FindSlots = ({
       {slotsVisible && (
         <View className="flex-wrap flex-row mx-2 p-2 bg-[#474747] rounded-lg">
           {slots.map((slot, index) => (
-            <TouchableOpacity key={index}>
+            <TouchableOpacity
+              key={index}
+              className={`m-2 p-2 bg-[#f49b33] rounded-lg items-center justify-center`}
+            >
               <Text className="text-white font-bold">{slot}</Text>
             </TouchableOpacity>
           ))}
