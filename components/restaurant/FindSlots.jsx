@@ -12,6 +12,9 @@ const FindSlots = ({
   const handlePress = () => {
     setSlotsVisible(!slotsVisible);
   };
+  const handleSlotPress = (slot)=>{
+    
+  }
 
   return (
     <View className="flex-1">
@@ -39,6 +42,7 @@ const FindSlots = ({
             <TouchableOpacity
               key={index}
               className={`m-2 p-2 bg-[#f49b33] rounded-lg items-center justify-center`}
+              onPress={()=>handleSlotPress(slot)}
             >
               <Text className="text-white font-bold">{slot}</Text>
             </TouchableOpacity>
