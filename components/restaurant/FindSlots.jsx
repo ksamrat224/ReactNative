@@ -36,7 +36,7 @@ const FindSlots = ({
       {slotsVisible && (
         <View>
           {slots.map((slot, index) => (
-            <TouchableOpacity></TouchableOpacity>
+            <TouchableOpacity key={index}></TouchableOpacity>
           ))}
         </View>
       )}
