@@ -33,7 +33,7 @@ const FindSlots = ({
         </View>
         {selectedSlot != null && (
           <View className="flex-1 ">
-            <TouchableOpacity onPress={handlePress}>
+            <TouchableOpacity >
               <Text className="text-center text-lg font-bold  bg-[#f49b33] p-2 my-3 mx-2 rounded-lg text-white">
                 Book Slots
               </Text>
